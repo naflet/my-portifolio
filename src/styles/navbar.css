@@ -1,0 +1,206 @@
+/* ==========================================
+   Full-Stack Glassmorphism Navbar Styles
+   ========================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  background: rgba(9, 13, 22, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+  transition: all 0.3s ease;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.navbar-scrolled {
+  padding: 14px 0;
+  background: rgba(9, 13, 22, 0.92);
+  border-bottom-color: rgba(51, 65, 85, 0.8);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Brand Logo */
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  transition: opacity 0.25s ease;
+}
+
+.logo:hover {
+  opacity: 0.9;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #60a5fa, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Nav Menu Items */
+.navbar ul.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul.nav-links li a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.93rem;
+  font-weight: 500;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.25s ease;
+}
+
+.navbar ul.nav-links li a:hover,
+.navbar ul.nav-links li a.active {
+  color: #f1f5f9;
+}
+
+/* Active Indicator Line */
+.navbar ul.nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #60a5fa, #a855f7);
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+
+.navbar ul.nav-links li a:hover::after,
+.navbar ul.nav-links li a.active::after {
+  width: 100%;
+}
+
+/* Header CTA Button */
+.nav-cta-btn {
+  background: rgba(37, 99, 235, 0.15) !important;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: #60a5fa !important;
+  padding: 8px 18px !important;
+  border-radius: 8px;
+  font-weight: 600 !important;
+  transition: all 0.25s ease !important;
+}
+
+.nav-cta-btn::after {
+  display: none !important;
+}
+
+.nav-cta-btn:hover {
+  background: #2563eb !important;
+  border-color: #3b82f6 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+/* Animated Hamburger Toggle Button */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 2px;
+  background: #f1f5f9;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Transform Hamburger into 'X' when active */
+.menu-toggle.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ==========================================
+   Mobile Responsive Breakdown
+   ========================================== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navbar ul.nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 270px;
+    height: 100vh;
+    background: #0f172a;
+    border-left: 1px solid #1e293b;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 30px 40px;
+    gap: 20px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    transition: right 0.35s ease;
+  }
+
+  .navbar ul.nav-links.active {
+    right: 0;
+  }
+
+  .navbar ul.nav-links li {
+    width: 100%;
+  }
+
+  .navbar ul.nav-links li a {
+    display: block;
+    width: 100%;
+    font-size: 1.05rem;
+    padding: 10px 0;
+  }
+
+  .nav-cta-item {
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .nav-cta-btn {
+    display: block;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

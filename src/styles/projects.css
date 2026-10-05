@@ -1,0 +1,251 @@
+/* ==========================================
+   Full-Stack Projects Section Styles
+   ========================================== */
+
+.projects-section {
+  min-height: 100vh;
+  background: #090d16;
+  color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 80px;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Status Pill */
+.status-pill-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  margin: 0 auto 16px;
+  padding: 6px 16px;
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(51, 65, 85, 0.8);
+  border-radius: 20px;
+  font-size: 0.82rem;
+  color: #94a3b8;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #10b981;
+}
+
+/* Headings & Text */
+.projects-heading {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #60a5fa, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projects-subtitle {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto 40px;
+}
+
+/* Filter Controls */
+.project-filter-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 45px;
+}
+
+.project-filter-btn {
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+  color: #94a3b8;
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.project-filter-btn:hover,
+.project-filter-btn.active {
+  background: #1e293b;
+  color: #60a5fa;
+  border-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+/* Projects Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* Glassmorphism Project Cards */
+.project-card {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(96, 165, 250, 0.4);
+  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.12);
+}
+
+/* Card Header */
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.project-category-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #60a5fa;
+  background: rgba(37, 99, 235, 0.12);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+}
+
+.icon-link {
+  color: #94a3b8;
+  font-size: 1.15rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.icon-link:hover {
+  color: #60a5fa;
+  transform: translateY(-2px);
+}
+
+/* Card Body */
+.project-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 12px;
+}
+
+.project-description {
+  color: #94a3b8;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+/* Card Footer & Tags */
+.project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-badge {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+  color: #cbd5e1;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-family: 'Fira Code', monospace;
+}
+
+/* ==========================================
+   Entrance Animation Setup
+   ========================================== */
+.projects-heading,
+.projects-subtitle,
+.status-pill-center,
+.project-filter-container,
+.project-card {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.show-projects .status-pill-center {
+  animation: fadeUp 0.7s ease forwards;
+}
+
+.show-projects .projects-heading {
+  animation: fadeUp 0.7s ease forwards;
+  animation-delay: 0.15s;
+}
+
+.show-projects .projects-subtitle {
+  animation: fadeUp 0.7s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.show-projects .project-filter-container {
+  animation: fadeUp 0.7s ease forwards;
+  animation-delay: 0.45s;
+}
+
+.show-projects .project-card {
+  animation: fadeUp 0.7s ease forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Breakdown */
+@media (max-width: 900px) {
+  .projects-heading {
+    font-size: 2.2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
